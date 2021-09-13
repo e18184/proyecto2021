@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Usuarios" table="usuarios" lazy="false">
+		<id name="login" column="login" type="string">
+			<generator class="assigned">
+			</generator>
+		</id>
+		<property name="passwd" column="passwd" type="string" length="200" not-null="true" lazy="false"/>
+		<property name="estado" column="estado" type="integer" not-null="true" lazy="false"/>
+		<many-to-one name="codper" cascade="lock" column="codper" class="com.example.demo.modelo.Personas" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<set name="ORM_Codr" table="rolusu" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="login" not-null="true"/>
+			<many-to-many column="codr" class="com.example.demo.modelo.Roles">
+			</many-to-many>
+		</set>
+		<set name="ORM_Ejemplares" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="per_resp" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Ejemplares"/>
+		</set>
+		<set name="ORM_Ejemplares1" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="per_anula" not-null="false"/>
+			<one-to-many class="com.example.demo.modelo.Ejemplares"/>
+		</set>
+		<set name="ORM_Mdevol" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="login" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Mdevol"/>
+		</set>
+		<set name="ORM_Mprestamo" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="login" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Mprestamo"/>
+		</set>
+	</class>
+</hibernate-mapping>

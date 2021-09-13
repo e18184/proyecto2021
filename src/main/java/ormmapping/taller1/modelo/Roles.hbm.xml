@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Roles" table="roles" lazy="false">
+		<id name="codr" column="codr" type="integer" unsaved-value="0">
+			<generator class="sequence">
+				<param name="sequence">roles_codr_seq</param>
+			</generator>
+		</id>
+		<property name="nombre" column="nombre" type="string" length="40" not-null="true" lazy="false"/>
+		<property name="estado" column="estado" type="integer" not-null="true" lazy="false"/>
+		<set name="ORM_Codm" table="rolme" lazy="true" cascade="save-update,lock">
+			<key column="codr" not-null="true"/>
+			<many-to-many column="codm" class="com.example.demo.modelo.Menus">
+			</many-to-many>
+		</set>
+		<set name="ORM_Login" table="rolusu" lazy="true" cascade="save-update,lock">
+			<key column="codr" not-null="true"/>
+			<many-to-many column="login" class="com.example.demo.modelo.Usuarios">
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

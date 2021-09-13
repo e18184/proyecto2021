@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+
+    
+    <window title="My First ZK Application" border="normal">
+   Hello World!
+</window>
+
+</zk>

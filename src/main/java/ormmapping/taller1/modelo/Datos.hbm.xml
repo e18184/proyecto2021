@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Datos" table="datos" lazy="false">
+		<id name="ci" column="ci" type="string">
+			<generator class="assigned">
+			</generator>
+		</id>
+		<many-to-one name="codper" cascade="lock" column="codper" class="com.example.demo.modelo.Personas" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<set name="ORM_Mprestamo" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="ci" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Mprestamo"/>
+		</set>
+	</class>
+</hibernate-mapping>

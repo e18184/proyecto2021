@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Tipos" table="tipos" lazy="false">
+		<id name="codtipo" column="codtipo" type="integer" unsaved-value="0">
+			<generator class="sequence">
+				<param name="sequence">tipos_codtipo_seq</param>
+			</generator>
+		</id>
+		<property name="nombre" column="nombre" type="string" length="40" not-null="true" lazy="false"/>
+		<property name="estado" column="estado" type="integer" not-null="true" lazy="false"/>
+		<property name="sw" column="sw" type="integer" not-null="true" lazy="false"/>
+		<set name="ORM_Tipotext" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codtipo" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Tipotext"/>
+		</set>
+	</class>
+</hibernate-mapping>

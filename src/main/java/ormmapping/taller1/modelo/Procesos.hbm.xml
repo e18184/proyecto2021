@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Procesos" table="procesos" lazy="false">
+		<id name="codp" column="codp" type="integer" unsaved-value="0">
+			<generator class="sequence">
+				<param name="sequence">procesos_codp_seq</param>
+			</generator>
+		</id>
+		<property name="nombre" column="nombre" type="string" length="40" not-null="true" lazy="false"/>
+		<property name="enlace" column="enlace" type="string" length="60" not-null="true" lazy="false"/>
+		<property name="estado" column="estado" type="integer" not-null="true" lazy="false"/>
+		<set name="ORM_Codm" table="mepro" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codp" not-null="true"/>
+			<many-to-many column="codm" class="com.example.demo.modelo.Menus">
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

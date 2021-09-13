@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Mprestamo" table="mprestamo" lazy="false">
+		<id name="codp" column="codp" type="integer" unsaved-value="0">
+			<generator class="sequence">
+				<param name="sequence">mprestamo_codp_seq</param>
+			</generator>
+		</id>
+		<property name="fecha" column="fecha" type="date" not-null="true" lazy="false"/>
+		<property name="fini" column="fini" type="date" not-null="true" lazy="false"/>
+		<property name="ffin" column="ffin" type="date" not-null="true" lazy="false"/>
+		<property name="tipopres" column="tipopres" type="integer" not-null="true" lazy="false"/>
+		<property name="estado" column="estado" type="integer" not-null="true" lazy="false"/>
+		<many-to-one name="ci" cascade="lock" column="ci" class="com.example.demo.modelo.Datos" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<many-to-one name="login" cascade="lock" column="login" class="com.example.demo.modelo.Usuarios" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<set name="ORM_Dprestamo" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codp" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Dprestamo"/>
+		</set>
+		<set name="ORM_Mdevol" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codp" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Mdevol"/>
+		</set>
+	</class>
+</hibernate-mapping>

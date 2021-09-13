@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Textos" table="textos" lazy="false">
+		<id name="codt" column="codt" type="integer" unsaved-value="0">
+			<generator class="sequence">
+				<param name="sequence">textos_codt_seq</param>
+			</generator>
+		</id>
+		<property name="titulo" column="titulo" type="string" length="150" not-null="true" lazy="false"/>
+		<property name="resumen" column="resumen" type="string" length="1000" not-null="false" lazy="false"/>
+		<property name="isbn" column="isbn" type="string" length="20" not-null="false" lazy="false"/>
+		<property name="edicion" column="edicion" type="integer" not-null="false" lazy="false"/>
+		<property name="fechapub" column="fechapub" type="date" not-null="false" lazy="false"/>
+		<set name="ORM_Coda" table="escriben" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codt" not-null="true"/>
+			<many-to-many column="coda" class="com.example.demo.modelo.Autores">
+			</many-to-many>
+		</set>
+		<many-to-one name="code" cascade="lock" column="code" class="com.example.demo.modelo.Editoriales" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<many-to-one name="coda1" cascade="lock" column="coda" class="com.example.demo.modelo.Areas" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<set name="ORM_Ejemplares" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codt" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Ejemplares"/>
+		</set>
+		<set name="ORM_Tipotext" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codt" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Tipotext"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+   	<!-- properties -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url">jdbc:postgresql://Localhost:5432/Taller_1</property>
+		<property name="connection.username">postgres</property>
+		<property name="connection.password">1512</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">0</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">15</property>
+		<property name="hibernate.c3p0.timeout">0</property>
+		<property name="show_sql">false</property>
+		<property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+		<!-- mapping files -->
+		<mapping resource="ormmapping/taller1/modelo/Areas.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Autores.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Datos.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Dprestamo.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Editoriales.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Ejemplares.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Mdevol.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Menus.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Mprestamo.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Personas.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Procesos.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Roles.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Telefonos.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Textos.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Tipos.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Tipotext.hbm.xml" />
+		<mapping resource="ormmapping/taller1/modelo/Usuarios.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

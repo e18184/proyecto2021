@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Personas" table="personas" lazy="false">
+		<id name="codper" column="codper" type="integer" unsaved-value="0">
+			<generator class="sequence">
+				<param name="sequence">personas_codper_seq</param>
+			</generator>
+		</id>
+		<property name="nombre" column="nombre" type="string" length="60" not-null="true" lazy="false"/>
+		<property name="ap" column="ap" type="string" length="40" not-null="false" lazy="false"/>
+		<property name="am" column="am" type="string" length="40" not-null="false" lazy="false"/>
+		<property name="genero" column="genero" type="string" length="1" not-null="true" lazy="false"/>
+		<property name="estado" column="estado" type="integer" not-null="true" lazy="false"/>
+		<property name="tipoper" column="tipoper" type="string" length="1" not-null="true" lazy="false"/>
+		<property name="foto" column="foto" type="string" length="40" not-null="false" lazy="false"/>
+		<set name="ORM_Datos" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codper" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Datos"/>
+		</set>
+		<set name="ORM_Telefonos" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codper" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Telefonos"/>
+		</set>
+		<set name="ORM_Usuarios" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="codper" not-null="true"/>
+			<one-to-many class="com.example.demo.modelo.Usuarios"/>
+		</set>
+	</class>
+</hibernate-mapping>

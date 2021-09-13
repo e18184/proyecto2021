@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Model quotesql="1" tablecharset="" mysql_version="504" mssql_version="2005" derby_version="106" ingres_version="9">
+  <Entity name="areas" Unlogged="false" PKConstraintName="areas_pkey" PKClustered="0">
+    <Column name="coda">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>areas_coda_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="autores" Unlogged="false" PKConstraintName="autores_pkey" PKClustered="0">
+    <Column name="coda">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>autores_coda_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>60</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ap">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="am">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="genero">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>1</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="datos" Unlogged="false" PKConstraintName="datos_pkey" PKClustered="0">
+    <Column name="ci">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="codper">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.personas.codper</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="ddevol" Unlogged="false" PKConstraintName="ddevol_pkey" PKClustered="0">
+    <Column name="codd">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.mdevol.codd</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>ddevol_codd_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="codinv">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.ejemplares.codinv</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>ddevol_codinv_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+  </Entity>
+  <Entity name="dprestamo" Unlogged="false" PKConstraintName="dprestamo_pkey" PKClustered="0">
+    <Column name="codp">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.mprestamo.codp</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>dprestamo_codp_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="codinv">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.ejemplares.codinv</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>dprestamo_codinv_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="editoriales" Unlogged="false" PKConstraintName="editoriales_pkey" PKClustered="0">
+    <Column name="code">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>editoriales_code_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="ejemplares" Unlogged="false" PKConstraintName="ejemplares_pkey" PKClustered="0">
+    <Column name="codinv">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>ejemplares_codinv_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="disponible">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="codt">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.textos.codt</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <DefaultValue>nextval('ejemplares_codt_seq'::regclass)</DefaultValue>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="per_resp">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.usuarios.login</ReferencedColumn>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="per_anula">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.usuarios.login</ReferencedColumn>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="escriben" Unlogged="false" PKConstraintName="escriben_pkey" PKClustered="0">
+    <Column name="coda">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.autores.coda</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>escriben_coda_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="codt">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.textos.codt</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>escriben_codt_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+  </Entity>
+  <Entity name="mdevol" Unlogged="false" PKConstraintName="mdevol_pkey" PKClustered="0">
+    <Column name="codd">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>mdevol_codd_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="fecha">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="login">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.usuarios.login</ReferencedColumn>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="codp">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.mprestamo.codp</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="menus" Unlogged="false" PKConstraintName="menus_pkey" PKClustered="0">
+    <Column name="codm">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>menus_codm_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="mepro" Unlogged="false" PKConstraintName="mepro_pkey" PKClustered="0">
+    <Column name="codm">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.menus.codm</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>mepro_codm_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="codp">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.procesos.codp</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>mepro_codp_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+  </Entity>
+  <Entity name="mprestamo" Unlogged="false" PKConstraintName="mprestamo_pkey" PKClustered="0">
+    <Column name="codp">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>mprestamo_codp_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="fecha">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="fini">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ffin">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="tipopres">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ci">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.datos.ci</ReferencedColumn>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="login">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.usuarios.login</ReferencedColumn>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="personas" Unlogged="false" PKConstraintName="personas_pkey" PKClustered="0">
+    <Column name="codper">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>personas_codper_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>60</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ap">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="am">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="genero">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>1</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="tipoper">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>1</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="foto">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="procesos" Unlogged="false" PKConstraintName="procesos_pkey" PKClustered="0">
+    <Column name="codp">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>procesos_codp_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="enlace">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>60</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="roles" Unlogged="false" PKConstraintName="roles_pkey" PKClustered="0">
+    <Column name="codr">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>roles_codr_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="rolme" Unlogged="false" PKConstraintName="rolme_pkey" PKClustered="0">
+    <Column name="codr">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.roles.codr</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>rolme_codr_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="codm">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.menus.codm</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>rolme_codm_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+  </Entity>
+  <Entity name="rolusu" Unlogged="false" PKConstraintName="rolusu_pkey" PKClustered="0">
+    <Column name="codr">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.roles.codr</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>rolusu_codr_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="login">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.usuarios.login</ReferencedColumn>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="telefonos" Unlogged="false" PKConstraintName="telefonos_pkey" PKClustered="0">
+    <Column name="codper">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.personas.codper</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>telefonos_codper_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="numero">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>20</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="textos" Unlogged="false" PKConstraintName="textos_pkey" PKClustered="0">
+    <Column name="codt">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>textos_codt_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="titulo">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>150</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="resumen">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>1000</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="isbn">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>20</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="edicion">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="fechapub">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="coda">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.areas.coda</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <DefaultValue>nextval('textos_coda_seq'::regclass)</DefaultValue>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="code">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.editoriales.code</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <DefaultValue>nextval('textos_code_seq'::regclass)</DefaultValue>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+  </Entity>
+  <Entity name="tipos" Unlogged="false" PKConstraintName="tipos_pkey" PKClustered="0">
+    <Column name="codtipo">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>sequence</IDGenerator>
+      <IDGeneratorKey>tipos_codtipo_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>40</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="sw">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="tipotext" Unlogged="false" PKConstraintName="tipotext_pkey" PKClustered="0">
+    <Column name="codt">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.textos.codt</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>tipotext_codt_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="codtipo">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.tipos.codtipo</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <IDGeneratorKey>tipotext_codtipo_seq</IDGeneratorKey>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+    <Column name="docum">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>200</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="usuarios" Unlogged="false" PKConstraintName="usuarios_pkey" PKClustered="0">
+    <Column name="login">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>15</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="passwd">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>200</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="estado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="codper">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>public.personas.codper</ReferencedColumn>
+      <Type>9</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <DefaultValue>nextval('usuarios_codper_seq'::regclass)</DefaultValue>
+      <UserTypes>
+        <UserType DBType="256">serial</UserType>
+      </UserTypes>
+    </Column>
+  </Entity>
+  <ForeignKey name="datos_codper_fkey">
+    <ReferenceTable>datos</ReferenceTable>
+    <ReferencedTable>personas</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codper</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codper</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="ddevol_codd_fkey">
+    <ReferenceTable>ddevol</ReferenceTable>
+    <ReferencedTable>mdevol</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codd</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codd</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="ddevol_codinv_fkey">
+    <ReferenceTable>ddevol</ReferenceTable>
+    <ReferencedTable>ejemplares</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codinv</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codinv</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="dprestamo_codp_fkey">
+    <ReferenceTable>dprestamo</ReferenceTable>
+    <ReferencedTable>mprestamo</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codp</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codp</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="dprestamo_codinv_fkey">
+    <ReferenceTable>dprestamo</ReferenceTable>
+    <ReferencedTable>ejemplares</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codinv</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codinv</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="ejemplares_codt_fkey">
+    <ReferenceTable>ejemplares</ReferenceTable>
+    <ReferencedTable>textos</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codt</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codt</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="ejemplares_per_resp_fkey">
+    <ReferenceTable>ejemplares</ReferenceTable>
+    <ReferencedTable>usuarios</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>per_resp</Column>
+    </Columns>
+    <RefColumns>
+      <Column>login</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="ejemplares_per_anula_fkey">
+    <ReferenceTable>ejemplares</ReferenceTable>
+    <ReferencedTable>usuarios</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>per_anula</Column>
+    </Columns>
+    <RefColumns>
+      <Column>login</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="escriben_coda_fkey">
+    <ReferenceTable>escriben</ReferenceTable>
+    <ReferencedTable>autores</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>coda</Column>
+    </Columns>
+    <RefColumns>
+      <Column>coda</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="escriben_codt_fkey">
+    <ReferenceTable>escriben</ReferenceTable>
+    <ReferencedTable>textos</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codt</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codt</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="mdevol_login_fkey">
+    <ReferenceTable>mdevol</ReferenceTable>
+    <ReferencedTable>usuarios</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>login</Column>
+    </Columns>
+    <RefColumns>
+      <Column>login</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="mdevol_codp_fkey">
+    <ReferenceTable>mdevol</ReferenceTable>
+    <ReferencedTable>mprestamo</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codp</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codp</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="mepro_codm_fkey">
+    <ReferenceTable>mepro</ReferenceTable>
+    <ReferencedTable>menus</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codm</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codm</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="mepro_codp_fkey">
+    <ReferenceTable>mepro</ReferenceTable>
+    <ReferencedTable>procesos</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codp</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codp</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="mprestamo_ci_fkey">
+    <ReferenceTable>mprestamo</ReferenceTable>
+    <ReferencedTable>datos</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>ci</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ci</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="mprestamo_login_fkey">
+    <ReferenceTable>mprestamo</ReferenceTable>
+    <ReferencedTable>usuarios</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>login</Column>
+    </Columns>
+    <RefColumns>
+      <Column>login</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="rolme_codr_fkey">
+    <ReferenceTable>rolme</ReferenceTable>
+    <ReferencedTable>roles</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codr</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codr</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="rolme_codm_fkey">
+    <ReferenceTable>rolme</ReferenceTable>
+    <ReferencedTable>menus</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codm</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codm</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="rolusu_codr_fkey">
+    <ReferenceTable>rolusu</ReferenceTable>
+    <ReferencedTable>roles</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codr</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codr</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="rolusu_login_fkey">
+    <ReferenceTable>rolusu</ReferenceTable>
+    <ReferencedTable>usuarios</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>login</Column>
+    </Columns>
+    <RefColumns>
+      <Column>login</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="telefonos_codper_fkey">
+    <ReferenceTable>telefonos</ReferenceTable>
+    <ReferencedTable>personas</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codper</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codper</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="textos_coda_fkey">
+    <ReferenceTable>textos</ReferenceTable>
+    <ReferencedTable>areas</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>coda</Column>
+    </Columns>
+    <RefColumns>
+      <Column>coda</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="textos_code_fkey">
+    <ReferenceTable>textos</ReferenceTable>
+    <ReferencedTable>editoriales</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>code</Column>
+    </Columns>
+    <RefColumns>
+      <Column>code</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="tipotext_codt_fkey">
+    <ReferenceTable>tipotext</ReferenceTable>
+    <ReferencedTable>textos</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codt</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codt</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="tipotext_codtipo_fkey">
+    <ReferenceTable>tipotext</ReferenceTable>
+    <ReferencedTable>tipos</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codtipo</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codtipo</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="usuarios_codper_fkey">
+    <ReferenceTable>usuarios</ReferenceTable>
+    <ReferencedTable>personas</ReferencedTable>
+    <OnUpdate>No action</OnUpdate>
+    <OnDelete>No action</OnDelete>
+    <Columns>
+      <Column>codper</Column>
+    </Columns>
+    <RefColumns>
+      <Column>codper</Column>
+    </RefColumns>
+  </ForeignKey>
+</Model>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Autores" table="autores" lazy="false">
+		<id name="coda" column="coda" type="integer" unsaved-value="0">
+			<generator class="sequence">
+				<param name="sequence">autores_coda_seq</param>
+			</generator>
+		</id>
+		<property name="nombre" column="nombre" type="string" length="60" not-null="true" lazy="false"/>
+		<property name="ap" column="ap" type="string" length="40" not-null="false" lazy="false"/>
+		<property name="am" column="am" type="string" length="40" not-null="false" lazy="false"/>
+		<property name="genero" column="genero" type="string" length="1" not-null="false" lazy="false"/>
+		<property name="estado" column="estado" type="integer" not-null="false" lazy="false"/>
+		<set name="ORM_Codt" table="escriben" lazy="true" cascade="save-update,lock">
+			<key column="coda" not-null="true"/>
+			<many-to-many column="codt" class="com.example.demo.modelo.Textos">
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

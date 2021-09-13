@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Tipotext" table="tipotext" lazy="false">
+		<composite-id>
+			<key-many-to-one name="ORM_Codt" column="codt" class="com.example.demo.modelo.Textos">
+			</key-many-to-one>
+			<key-many-to-one name="ORM_Codtipo" column="codtipo" class="com.example.demo.modelo.Tipos">
+			</key-many-to-one>
+		</composite-id>
+		<property name="docum" column="docum" type="string" length="200" not-null="false" lazy="false"/>
+	</class>
+</hibernate-mapping>

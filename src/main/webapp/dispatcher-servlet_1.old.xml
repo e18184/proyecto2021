@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <bean class = "org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <!--<prop key="persona2.htm">formListarPersonaControlador</prop>
+                <prop key="estudiante.htm">formEstudianteControlador</prop>
+                <prop key="listaEstudiantes.htm">formListaEstudianteControlador</prop>
+                <prop key="insertarEstudiante.htm"> formInsertarEstudianteControlador</prop>
+                <prop key="modificarEstudiante.htm"> formModificarEstudianteControlador</prop>
+                <prop key="listaDirectores.htm">formListaDirectorControlador</prop>
+                <prop key="insertarDirector.htm">formInsertarDirectorControlador</prop>
+                <prop key="modificarDirector.htm">formModificarDirectorControlador</prop>
+                <prop key="eliminarEstudiante.htm">formEliminarEstudianteControlador</prop>
+                <prop key="listarestudiantematriculaparalelo.htm"> formListarEstudianteMatriculaParalelo </prop>
+                <prop key="adicionarestudiantematriculaparalelo.htm">formAdicionarEstudianteMatriculaParalelo </prop>
+                <prop key="listarparaleloasignaaula.htm">formListarParaleloAsignaAula</prop>
+                -->
+                <prop key="usuario.htm">formIngreso</prop>
+                <prop key="principal_2.htm">formPrincipal</prop>
+                <prop key="/frame/top.htm">formPrincipalContenedor</prop>
+                <prop key="bottom.htm">formBottom</prop>
+                <prop key="/frame/principalcontenedor.htm">formPrincipalContenedor</prop>
+                <prop key="uanadir.htm">formUanadir</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    
+    <!-- <bean name="formListarPersonaControlador" class="controlador.PersonaControlador" />
+    <bean name="formEstudianteControlador" class="controlador.EstudianteControlador"/>
+    <bean name="formListaEstudianteControlador" class="controlador.estudiante.ListaEstudianteControlador"/>
+    <bean name="formInsertarEstudianteControlador" class="controlador.estudiante.InsertarEstudianteControlador"/>
+    <bean name="formModificarEstudianteControlador" class="controlador.estudiante.ModificarEstudianteControlador"/>
+    <bean name="formListaDirectorControlador" class="controlador.director.ListaDirectorControlador"/>
+    <bean name="formInsertarDirectorControlador" class="controlador.director.InsertarDirectorControlador"/>
+    <bean name="formModificarDirectorControlador" class="controlador.director.ModificarDirectorControlador"/>
+    <bean name="formEliminarEstudianteControlador" class="controlador.estudiante.EliminarEstudianteControlador"/>
+    <bean name="formListarEstudianteMatriculaParalelo" class="controlador.matriculaestudianteparalelo.ListarEstudianteMatriculaParalelo" />
+    <bean name="formAdicionarEstudianteMatriculaParalelo" class="controlador.matriculaestudianteparalelo.AdicionarMatriculaEstudianteParalelo"/>
+    <bean name="formListarParaleloAsignaAula" class="controlador.asignaparaleloaula.ListarParaleloAsignaAula"/>
+    -->
+    
+    <bean name="formIngreso" class="ingreso.IngresoControler"/>
+    <bean name="formPrincipal" class="principal.PrincipalControler"/>
+    <bean name="formTop" class="principal.PrincipalContenedorControler"/>
+    <bean name="formBottom" class="principal.BottomControler"/>
+    <bean name="formPrincipalContenedor" class="principal.PrincipalContenedorControler"/>
+    <bean name="formUanadir" class="controlador.usuario.UanadirControler"/>
+</beans>

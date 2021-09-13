@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.example.demo.modelo.Dprestamo" table="dprestamo" lazy="false">
+		<composite-id>
+			<key-many-to-one name="ORM_Codp" column="codp" class="com.example.demo.modelo.Mprestamo">
+			</key-many-to-one>
+			<key-many-to-one name="ORM_Codinv" column="codinv" class="com.example.demo.modelo.Ejemplares">
+			</key-many-to-one>
+		</composite-id>
+		<property name="estado" column="estado" type="integer" not-null="true" lazy="false"/>
+	</class>
+</hibernate-mapping>
