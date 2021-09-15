@@ -9,9 +9,10 @@
     </head>
     <body>
         <!-- modificado 6-1-2020 -->
-        <form:form action="usuario.htm" method="post" modelAttribute="V_usuariorol">
+        <form:form action="usuario.jsp" method="post" modelAttribute="V_usuariorol">
            
-            <label>*Usuario</label><form:input path="login" value="${login}"/>
+            <label>*Usuario</label>
+            <form:input path="login" value="${login}"/>
             <form:errors path="login" cssClass="error"  />
             <br>
             <label>*Contrasena</label><form:input path="password" value="${password}"/>

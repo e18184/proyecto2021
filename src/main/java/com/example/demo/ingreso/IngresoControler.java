@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,22 +39,24 @@ public class IngresoControler {
     public IngresoControler(){
         this.ingresovalidar = new IngresoValidar();
     }
-    @RequestMapping(method=RequestMethod.GET)
-    public ModelAndView usuarioGet() 
+    @RequestMapping(value="usuario",method=RequestMethod.GET)
+    //public ModelAndView usuarioGet(@ModelAttribute("V_usuariorol") V_usuariorol p, Model model) 
+    public ModelAndView usuarioGet(@ModelAttribute("V_usuariorol") V_usuariorol p) 
             
     {   
         ModelAndView mav =new ModelAndView();
         mav.setViewName("usuario");
-        V_usuariorol p = new V_usuariorol();
+        //V_usuariorol p = new V_usuariorol();
         
         
         mav.addObject("V_usuariorol",p);
+        //model.addAttribute("V_usuariorol",p);
         
         System.out.println("se cargo el formulario");
         return mav;
     }
     
-    @RequestMapping(method=RequestMethod.POST)
+    @RequestMapping(value="usuario",method=RequestMethod.POST)
     
     public ModelAndView usuarioPost(
             @ModelAttribute("V_usuariorol") V_usuariorol rol,

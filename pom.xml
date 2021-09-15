@@ -61,13 +61,9 @@
     		<groupId>org.springframework</groupId>
     		<artifactId>spring-jdbc</artifactId>
 		</dependency>
-		
-		
-    	
-		
 	</dependencies>
 
-	<build>
+	<build> 
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
