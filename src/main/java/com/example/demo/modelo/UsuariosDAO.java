@@ -115,13 +115,14 @@ public class UsuariosDAO {
 		}
 	}
 	
-	public static Usuarios[] listUsuariosByQuery(String condition, String orderBy) {
+	public static Usuarios[] listUsuariosByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = UntitledPersistentManager.instance().getSession();
 			return listUsuariosByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
-			return null;
+			e.printStackTrace();
+			throw new PersistentException(e);
 		}
 	}
 	

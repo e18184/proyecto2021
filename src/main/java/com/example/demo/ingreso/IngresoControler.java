@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 // que sus valores se preserven, al pasar de un controlador
 // a otro
 @SessionAttributes({"mismenus","miusuario","rolseleccionado"})
-@RequestMapping("/usuario.jsp")
+@RequestMapping("/usuario")
 public class IngresoControler {
     private IngresoValidar ingresovalidar;
     private Usuarios pusuario= new Usuarios();

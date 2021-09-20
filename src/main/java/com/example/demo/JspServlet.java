@@ -1,5 +1,7 @@
 package com.example.demo;
+
 import javax.servlet.annotation.WebServlet;
+/*
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @ServletComponentScan
@@ -7,3 +9,4 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 public class JspServlet extends org.apache.jasper.servlet.JspServlet {
 
 }
+*/

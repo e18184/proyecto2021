@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("estudiante.jsp")
+@RequestMapping("estudiante")
 public class EstudianteControlador {
 
 	@RequestMapping(method=RequestMethod.GET)

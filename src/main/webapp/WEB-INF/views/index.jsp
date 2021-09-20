@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <! DOCTYPE html>
 <html>
-    esta es la primera pagina
+    richard sivila prueba
     <frameset rows="16%,16%,*">
         <frame src="top.htm" name="top">
         <frame src="bottom.htm" name="bottom">

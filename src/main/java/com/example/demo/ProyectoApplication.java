@@ -2,14 +2,20 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@EnableWebMvc
-public class ProyectoApplication {
-// en spring boot YA NO HAY ARCHIVOS DE BEANS XML
-	public static void main(String[] args) {
-		SpringApplication.run(ProyectoApplication.class, args);
-	}
+@ComponentScan({"com.example.demo"})
+public class ProyectoApplication extends SpringBootServletInitializer {
 
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(ProyectoApplication.class);
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(ProyectoApplication.class);
+    }
 }

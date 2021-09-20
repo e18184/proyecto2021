@@ -126,12 +126,12 @@
     <DriverFiles>&lt;&lt;PostgreSQL 42.2.2&gt;&gt;</DriverFiles>
     <Dialect>org.hibernate.dialect.PostgreSQLDialect</Dialect>
     <DriverClass>org.postgresql.Driver</DriverClass>
-    <URL>jdbc:postgresql://Localhost:5432/Taller_1</URL>
+    <URL>jdbc:postgresql://127.0.0.1:5432/base</URL>
     <UserName>postgres</UserName>
-    <EncryptedPassword>9728DB08FD46E66D4C9E0E2E434236C8</EncryptedPassword>
-    <HostName>Localhost</HostName>
+    <EncryptedPassword>16559942B749C6F17A4B0A3994ECA5F4</EncryptedPassword>
+    <HostName>127.0.0.1</HostName>
     <PortNO>5432</PortNO>
-    <DBName>Taller_1</DBName>
+    <DBName>base</DBName>
     <ServiceName></ServiceName>
     <ServerName></ServerName>
     <SelectedForm>true</SelectedForm>
